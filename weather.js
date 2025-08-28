@@ -42,7 +42,11 @@ function WeatherApp() {
       <div className={`weather-card ${setBackground(weatherData[city].temp)}`}>
         <div className="header">
           Choose your location
-          <select onChange={(e) => setCity(e.target.value)} className="select">
+          <select
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            className="select"
+          >
             {Object.keys(weatherData).map((key) => (
               <option key={key} value={key}>
                 {weatherData[key].city}
